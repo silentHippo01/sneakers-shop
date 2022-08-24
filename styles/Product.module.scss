@@ -1,0 +1,29 @@
+.product{
+    font-weight: light;
+    line-height: 25px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid rgb(17, 17, 17);
+    }
+    &__image{
+        width: 250px;
+        height: 300px;
+        border-radius: 15px;
+    }
+
+    &__details{
+        margin-top: 10px;
+        &_brand{
+            font-size: 13px;
+        }
+
+        &_title{
+            font-size: 20px;
+        }
+
+        &_price{
+
+        }
+    }
+}

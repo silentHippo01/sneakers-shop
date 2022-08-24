@@ -1,0 +1,101 @@
+.product{
+    margin: 50px 0 500px;
+    &__inner{
+        display: flex;
+    }
+
+
+    &__info{
+        margin-left: 30px;
+        &_title{
+            margin-bottom: 10px;
+            font-size: 30px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+
+        &_category{
+            margin-bottom: 20px;
+        }
+        
+        &_price{
+            margin-bottom: 30px;
+            font-size: 30px;
+
+        }
+
+        &_text{
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    &__sizes{
+        margin-bottom: 30px;
+        &_list{
+            display: flex;
+        }
+        &_item{
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #111111;
+            margin-right: 10px;
+            line-height: 2.5em; //центрует текст в блоке по вертикале
+            cursor: pointer;
+
+            &_text{
+                border-top: 5px;
+            }
+        }
+    }
+
+    &__addCart_btn{
+        margin-bottom: 30px;
+        width: 300px;
+        height: 50px;
+        border-radius: 35px;
+        outline: none;
+        font-size: 16px;
+        text-transform: uppercase;
+        border: none;
+        color:#ffffff;
+        background-color: #111111;
+        cursor: pointer;
+
+        &:hover{
+            border: 1px solid #111111;
+            color:#111111;
+            background-color: #ffffff;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+.product__slider{
+    
+    &_image{
+        width: 500px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    &_small_container{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    &_smallImg{
+        width: 80px;
+        border-radius: 10px;
+        margin-right: 3px;
+    }
+
+    &_selectImgSmall{
+        width: 80px;
+        border: 1px solid #111111;
+        border-radius: 10px;
+        margin-right: 3px;
+    }
+}

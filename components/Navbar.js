@@ -8,22 +8,22 @@ const Navbar = () => {
             <ul className='menu__list'>
                 <li>
                     <div className='menu__list-item'>
-                        <Link className='menu__list-link' href={'/catalog/'}>обувь</Link>
+                        <Link className='menu__list-link' href={'/shoes/'}>ОБУВЬ</Link>
                     </div>
                 </li>
                 <li>
                     <div className='menu__list-item'>
-                        <a className='menu__list-link' href="#">бренды</a>
+                        <Link className='menu__list-link' href={'/clothes/'}>ОДЕЖДА</Link>
                     </div>
                 </li>
                 <li>
                     <div className='menu__list-item'>
-                        <a className='menu__list-link' href="#">аксессуары</a>
+                        <Link className='menu__list-link' href={'/accessories/'}>АКСЕССУАРЫ</Link>
                     </div>
                 </li>
                 <li>
                     <div className='menu__list-item'>
-                        <a className='menu__list-link' href="#">доставка</a>
+                        <Link className='menu__list-link' href={'/shipping/'}>ДОСТАВКА</Link>
                     </div>
                 </li>
             </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import styles from '../styles/Product.module.scss';
+import styles from '../styles/component_styles/ProductSmall.module.scss';
 
 import { client, urlFor } from '../lib/client';
 

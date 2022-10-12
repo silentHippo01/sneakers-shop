@@ -1,37 +1,36 @@
 import { useSelector } from 'react-redux';
-import styles from '../styles/Cart.module.scss';
+// import styles from '../styles/component_styles/Cart.module.scss';
+
 import CartItem from './CartItem';
 
-const Cart = ({ toggleShowCart }) => {
+const Cart = ({ toggleShowCart, showCart, ref }) => {
 
     const cartItems = useSelector((state) => state.cart.cartItems);
-    // console.log(cartItems);
-    
+    const totalPrice = useSelector((state) => state.cart.totalPrice);
+
+    // localStorage.setItem('cart', JSON.stringify(cartItems));
+
+
     return (
-        <div className={styles.cart}>
-           <div className={styles.cart__wrapper}>
-                <div className={styles.cart__header}>
-                    <button 
-                        className={styles.cart__close_btn}
-                        onClick={() => toggleShowCart(false)}
-                        >
-                            Продолжить покупки
-                    </button>
-
-                    <h2 className={styles.cart__title}>
-                        Ваша корзина
-                    </h2>
+        <>
+            <div className='cart'>
+                <div className='cart__blackout' onClick={() => toggleShowCart(false)}></div>
+                <div className='cart__inner'>
+                    <button className='cart__btn' onClick={() => toggleShowCart(false)}>Продолжить покупки</button>
+                    <h3 className='cart__title'>Мои покупки</h3>
+                    <div className='cart__content'>
+                        {
+                            cartItems?.map((item, _id) => (
+                                <CartItem product={item} key={_id} id={_id} />
+                            ))
+                        }
+                    </div>
+                    <p>К оплате: {totalPrice}</p>
                 </div>
 
-                <div className={styles.cart__content}>
-                    {
-                        cartItems && cartItems.map((item, id) => (
-                            <CartItem key={id} product={item}/>
-                        ))
-                    }
-                </div>
-           </div>
-        </div>
+            </div>
+        </>
+
     );
 };
 

@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^1.0.6",
     "@reduxjs/toolkit": "^1.8.4",
     "@sanity/client": "^3.3.3",
     "@sanity/image-url": "^1.0.1",
     "next": "12.2.4",
+    "next-redux-wrapper": "^8.0.0",
     "react": "18.2.0",
+    "react-alice-carousel": "^2.6.4",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
-    "sass": "^1.54.3"
+    "react-slick": "^0.29.0",
+    "react-transition-group": "^4.4.5",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.54.3",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "8.21.0",

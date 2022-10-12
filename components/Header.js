@@ -1,11 +1,44 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Navbar from './Navbar';
 import Link from 'next/link';
+import dynamic from 'next/dynamic'
 
 import Cart from './Cart';
 
+import styles from '../styles/component_styles/Cart.module.scss';
+import { useSelector } from 'react-redux';
+
+import CartItem from './CartItem';
+
+import { CSSTransition } from 'react-transition-group';
+import { useEffect } from 'react';
+
+
+//динамический роут нужен для отключения ssr, чтобы корзина отрисовывалась только на стороне клиента
+//без него появляется ошибка гидратации
+const DynamicCart = dynamic(() => import('./Cart'), {
+    ssr: true,
+}) 
+
 const Header = () => {
-    const [showCart, toggleShowCart] = useState(false)
+    const [showCart, toggleShowCart] = useState(false);
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const cartAmount = useSelector((state) => state.cart);
+
+    const nodeRef = useRef(null);
+
+    const cartOpen = () => {
+        cartRef.classList.toggle('is_cart_open');
+    }
+
+    if (typeof window !== "undefined") {
+        if (showCart === true) {
+            window.document.body.style.overflow = 'hidden';
+        } else {
+            window.document.body.style.overflow = 'auto';
+        }
+    }
+
 
     return (
         <div className='header'>
@@ -17,16 +50,25 @@ const Header = () => {
 
                     <Navbar />
 
-                    {/* <div className='header_search'>
-                        <input className='header_search-inp' placeholder='Поиск...' />
-                    </div> */}
                     <input className='header_search-inp' placeholder='Поиск...' />
 
-                   <button className='header_cart-btn' onClick={() => toggleShowCart(!showCart)}></button>
+                    <button className='header_cart-btn' onClick={() => toggleShowCart(true)}>
+                        {/* <div className='header_cart-btn-count'>{cartAmount}</div> */}
+                    </button>
 
-                   {
-                    showCart && <Cart toggleShowCart={toggleShowCart}/>
-                   }
+                    <CSSTransition
+                        in={showCart}
+                        timeout={500}
+                        classNames='cart'
+                        unmountOnExit
+                        nodeRef={nodeRef}
+                    >
+                        <div ref={nodeRef} className="cart__wrapper">
+                            <DynamicCart toggleShowCart={toggleShowCart} showCart={showCart} />
+                        </div>
+
+                    </CSSTransition>
+                    
                 </div>
             </div>
         </div>

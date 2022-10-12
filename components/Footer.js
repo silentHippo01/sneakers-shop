@@ -1,7 +1,11 @@
 import Link from 'next/link';
-import React from 'react';
+import Image from 'next/image';
+import { ReactComponent as Logo } from './../src/icons/git.svg';
 
 const Footer = () => {
+    const linkStyle = {
+        color: '#ffffff',
+    }
     return (
         <footer className='footer'>
             <div className='container'>
@@ -17,14 +21,21 @@ const Footer = () => {
                                 <li className='footer__menu-item'>
                                     <Link href="/faq">
                                         <a>
-                                            вопрос-ответ  
+                                            вопрос-ответ
                                         </a>
                                     </Link>
                                 </li>
                                 <li className='footer__menu-item'>
                                     <Link href="/faq">
                                         <a>
-                                            доставка 
+                                            доставка
+                                        </a>
+                                    </Link>
+                                </li>
+                                <li className='footer__menu-item'>
+                                    <Link href="/privacy">
+                                        <a>
+                                            Политика конфиденциальности
                                         </a>
                                     </Link>
                                 </li>
@@ -38,9 +49,17 @@ const Footer = () => {
                         </div>
                         <ul className='footer__socials'>
                             <li className='footer__socials-item'>
-                                <a className='footer__socials-link footer__socials-inst' href="#">ins</a>
-                                <a className='footer__socials-link footer__socials-git' href="#">git</a>
+                                <a href="#"></a>
+                            </li>
+                            <li className='footer__socials-item'>
+                                <a className='footer__socials-link footer__socials-git' href="#"><Image src='/../src/icons/git.svg' width={32} height={32} style={linkStyle}/></a>
+                            </li>
+                            <li className='footer__socials-item'>
                                 <a className='footer__socials-link footer__socials-gmail' href="#">gmail</a>
+                            </li>
+                            <li className='footer__socials-item'>
+                            </li>
+                            <li className='footer__socials-item'>
                                 <a className='footer__socials-link footer__socials-linkedin' href="#">linkedin</a>
                             </li>
                         </ul>
@@ -55,3 +74,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

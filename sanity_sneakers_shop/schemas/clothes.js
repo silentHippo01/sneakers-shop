@@ -1,6 +1,6 @@
 export default {
-    name: "product",
-    title: "Product",
+    name: 'clothes',
+    title: 'Clothes',
     type: 'document',
     fields: [
         {
@@ -37,9 +37,24 @@ export default {
             type: 'number',
         }, 
         {
+            name: 'discount',
+            title: 'Discount',
+            type: 'number',
+        }, 
+        {
             name: 'description',
             title: 'Description',
             type: 'string',
+        },
+        {
+            name: 'characteristics',
+            title: 'Characteristics',
+            type: 'array',
+            of: [
+                {
+                    type: 'block'
+                },
+            ]
         },
         {
             name: 'typeOfProduct',
@@ -56,34 +71,11 @@ export default {
             title: 'Sizes',
             type: 'array',
             of: [{type: 'string'}],
-        }, 
+        },
         {
-            name: 'content',
-            title: 'Content',
-            type: 'array',
-            of: [
-              {
-                type: 'block'
-              },
-              {
-                type: 'image',
-                fields: [
-                  {
-                    type: 'text',
-                    name: 'alt',
-                    title: 'Alternative text',
-                    description: `Some of your visitors cannot see images, 
-                      be they blind, color-blind, low-sighted; 
-                      alternative text is of great help for those 
-                      people that can rely on it to have a good idea of 
-                      what\'s on your page.`,
-                    options: {
-                      isHighlighted: true
-                    }
-                  }
-                ]
-              }
-            ]
-          }
+            name: 'recommendations', 
+            title: 'Recommendations',
+            type: 'boolean',
+        }
     ]
 }

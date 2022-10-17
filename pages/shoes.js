@@ -3,6 +3,9 @@ import { client } from '../lib/client';
 import styles from '../styles/page_style/Shoes.module.scss';
 import Product from '../components/Product';
 
+import { paginate } from '../utils/paginate';
+import Pagination from '../components/Pagination';
+
 export const getServerSideProps = async () => {
     const shoesQuery = '*[_type == "shoes"]';
 
@@ -22,6 +25,14 @@ export const getServerSideProps = async () => {
 
 const Catalog = ({ shoesArr }) => {
     const [filter, setFiltered] = useState('all');
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 3;
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    }
+
+    const paginatePost = paginate(shoesArr, currentPage, pageSize);
 
     const filters = (arr, filter) => {
         if(filter === 'all'){
@@ -53,12 +64,21 @@ const Catalog = ({ shoesArr }) => {
                     </div>
                     <div className={styles.shoes__wrapper}>
                         {
-                            filteredShoes?.map((elem, index) => (
+                            paginatePost?.map((elem, index) => (
                                 <Product product={elem} key={index}/>
                             ))
                         }
                     </div>
+
+                    <Pagination 
+                        items={shoesArr.length}
+                        pageSize={pageSize}
+                        currentPage={currentPage}   
+                        onPageChange={handlePageChange} 
+                    />
                 </div>
+
+
             </div>
         </div>
     );

@@ -16,14 +16,14 @@ import { useEffect } from 'react';
 
 //динамический роут нужен для отключения ssr, чтобы корзина отрисовывалась только на стороне клиента
 //без него появляется ошибка гидратации
-const DynamicCart = dynamic(() => import('./Cart'), {
-    ssr: true,
-}) 
+// const DynamicCart = dynamic(() => import('./Cart'), {
+//     ssr: false,
+// }) 
 
 const Header = () => {
     const [showCart, toggleShowCart] = useState(false);
     const cartItems = useSelector((state) => state.cart.cartItems);
-    const cartAmount = useSelector((state) => state.cart);
+    const cartAmount = useSelector((state) => state.cart.cartItems.length);
 
     const nodeRef = useRef(null);
 
@@ -39,7 +39,6 @@ const Header = () => {
         }
     }
 
-
     return (
         <div className='header'>
             <div className='container'>
@@ -53,7 +52,7 @@ const Header = () => {
                     <input className='header_search-inp' placeholder='Поиск...' />
 
                     <button className='header_cart-btn' onClick={() => toggleShowCart(true)}>
-                        {/* <div className='header_cart-btn-count'>{cartAmount}</div> */}
+                        <div className='header_cart-btn-count'>{cartAmount}</div>
                     </button>
 
                     <CSSTransition
@@ -64,7 +63,7 @@ const Header = () => {
                         nodeRef={nodeRef}
                     >
                         <div ref={nodeRef} className="cart__wrapper">
-                            <DynamicCart toggleShowCart={toggleShowCart} showCart={showCart} />
+                            <Cart toggleShowCart={toggleShowCart} showCart={showCart} />
                         </div>
 
                     </CSSTransition>

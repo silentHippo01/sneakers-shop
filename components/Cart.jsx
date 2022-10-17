@@ -24,8 +24,12 @@ const Cart = ({ toggleShowCart, showCart, ref }) => {
                                 <CartItem product={item} key={_id} id={_id} />
                             ))
                         }
+                         <p className='cart__total'>Итого: {totalPrice} </p>
+                         <button className='cart__btn_buy'>
+                            Оформить заказ
+                         </button>
                     </div>
-                    <p>К оплате: {totalPrice}</p>
+                   
                 </div>
 
             </div>

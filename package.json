@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^1.8.4",
     "@sanity/client": "^3.3.3",
     "@sanity/image-url": "^1.0.1",
+    "lodash": "^4.17.21",
     "next": "12.2.4",
     "next-redux-wrapper": "^8.0.0",
     "react": "18.2.0",

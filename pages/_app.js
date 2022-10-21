@@ -3,8 +3,10 @@ import { Provider } from 'react-redux'
 import Layout from '../components/Layout'
 import '../styles/globals.scss'
 import '../styles/reset.scss'
+import '../styles/fonts.scss'
 import store, {persistor} from '../store/store'
 import "slick-carousel/slick/slick.css"; 
+
 
 import { PersistGate } from 'redux-persist/integration/react';
 

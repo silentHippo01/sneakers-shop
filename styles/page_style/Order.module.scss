@@ -1,0 +1,112 @@
+.order {
+    &__inner {
+
+        h1{
+            font-size: 42px;
+            text-align: center;
+            font-weight: 400;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        margin: 30px 0;
+    }
+
+    &__details {
+        width: 100%;
+        &_title {
+            margin: 15px 0;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+
+        &_form {
+            &_item {
+                margin: 0 0 15px 0;
+            }
+
+            &_item_title {
+                font-size: 15px;
+                line-height: 25px;
+                color: #818d92;
+                text-transform: uppercase;
+            }
+
+            &_item_input {
+                width: 100%;
+                height: 100%;
+                max-width: 480px;
+                height: 36px;
+                padding: 0 15px;
+                outline: none;
+                border-radius: 10px;
+                border: none;
+                background-color: #f4f6f8;
+            }
+
+            &_btn{
+                margin-top: 30px;
+                width: 300px;
+                height: 50px;
+                border-radius: 35px;
+                outline: none;
+                font-size: 16px;
+                text-transform: uppercase;
+                border: none;
+                color: #ffffff;
+                background-color: #111111;
+                cursor: pointer;
+                transition: all 0.5s ease;
+        
+                &:hover {
+                    border: 1px solid #111111;
+                    color: #111111;
+                    background-color: #ffffff;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+
+    &__products {
+        h3 {
+            margin: 15px 0;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+
+        &_content {
+
+        }
+
+        &_content_item {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        &_content_item_img {
+            max-width: 150px;
+            border-radius: 10px;
+            margin: 0 20px 0 0;
+        }
+
+        &_content_item_details {
+
+            h4{
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0 0 15px 0;
+                line-height: 24px;
+            }
+            p{
+                margin: 0 0 5px 0;
+                line-height: 24px;
+            }
+        }
+    }
+}

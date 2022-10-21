@@ -39,13 +39,16 @@ const shipping = ({ shippingArticles }) => {
                 <div className='shipping__inner'>
 
                     <div className='shipping__articles'>
-                        {
-                            shippingArticles?.map((elem, i) => (
-                                <div className={activeArticle === i ? 'shipping__article active' : 'shipping__article'} onClick={() => setActiveArticle(i)} key={i}>
-                                    <PortableText value={shippingArticles[i].content} components={components} />
-                                </div>
-                            ))
-                        }
+                        <div className='shipping__articles-container'>
+                            {
+                                shippingArticles?.map((elem, i) => (
+                                    <div className={activeArticle === i ? 'shipping__article active' : 'shipping__article'} onClick={() => setActiveArticle(i)} key={i}>
+                                        <PortableText value={shippingArticles[i].content} components={components} />
+                                    </div>
+                                ))
+                            }
+                        </div>
+
                     </div>
 
                     <div className='shipping__aside'>

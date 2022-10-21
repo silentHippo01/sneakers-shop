@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 // import styles from '../styles/component_styles/Cart.module.scss';
+import Link from 'next/link';
 
 import CartItem from './CartItem';
 
@@ -7,9 +8,6 @@ const Cart = ({ toggleShowCart, showCart, ref }) => {
 
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalPrice = useSelector((state) => state.cart.totalPrice);
-
-    // localStorage.setItem('cart', JSON.stringify(cartItems));
-
 
     return (
         <>
@@ -24,12 +22,23 @@ const Cart = ({ toggleShowCart, showCart, ref }) => {
                                 <CartItem product={item} key={_id} id={_id} />
                             ))
                         }
-                         <p className='cart__total'>Итого: {totalPrice} </p>
-                         <button className='cart__btn_buy'>
-                            Оформить заказ
-                         </button>
+                        {/* <p className='cart__total'>Итого: {totalPrice} </p> */}
+                        
+                        {
+                            cartItems.length > 0 ? 
+                            <div> 
+                                <p className='cart__total'>Итого: {totalPrice} </p> 
+                                <button className='cart__btn_buy'>  <Link href="/order">  Оформить заказ </Link></button> 
+                            </div> 
+                            : 
+                            <p className='cart__isEmpty'>Корзина пуста</p>
+                        }
+                        
+                        
+                        
+                           
                     </div>
-                   
+
                 </div>
 
             </div>

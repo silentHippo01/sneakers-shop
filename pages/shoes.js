@@ -54,14 +54,14 @@ const Catalog = ({ shoesArr }) => {
                 <div className={styles.shoes__inner}>
                     <h1 className={styles.shoes__title}>Кроссовки</h1>
 
-                    <div className={styles.shoes__filter}>
+                    {/* <div className={styles.shoes__filter}>
                         <button className={styles.shoes__filter_brand} value="all" onClick={(e)=>setFiltered(e.target.value)}>Все</button>
                         <button className={styles.shoes__filter_brand} value="Nike" onClick={(e)=>setFiltered(e.target.value)}>Nike</button>
                         <button className={styles.shoes__filter_brand} value="Adidas" onClick={(e)=>setFiltered(e.target.value)}>Adidas</button>
                         <button className={styles.shoes__filter_brand} value="Vans" onClick={(e)=>setFiltered(e.target.value)}>Vans</button>
                         <button className={styles.shoes__filter_brand} value="Puma" onClick={(e)=>setFiltered(e.target.value)}>Puma</button>
                         <button className={styles.shoes__filter_brand} value="Reebok" onClick={(e)=>setFiltered(e.target.value)}>Reebok</button>
-                    </div>
+                    </div> */}
                     <div className={styles.shoes__wrapper}>
                         {
                             paginatePost?.map((elem, index) => (

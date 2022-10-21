@@ -12,7 +12,10 @@ import CartItem from './CartItem';
 
 import { CSSTransition } from 'react-transition-group';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
+
+import mainLogo from '../src/icons/MainLogo3.png';
 
 //динамический роут нужен для отключения ssr, чтобы корзина отрисовывалась только на стороне клиента
 //без него появляется ошибка гидратации
@@ -44,12 +47,12 @@ const Header = () => {
             <div className='container'>
                 <div className='header_inner'>
                     <Link className='header_logo-link' href='/'>
-                        SNEAKERS
+                        <Image src={mainLogo} width={90} height={90}/>
                     </Link>
 
                     <Navbar />
 
-                    <input className='header_search-inp' placeholder='Поиск...' />
+                    {/* <input className='header_search-inp' placeholder='Поиск...' /> */}
 
                     <button className='header_cart-btn' onClick={() => toggleShowCart(true)}>
                         <div className='header_cart-btn-count'>{cartAmount}</div>

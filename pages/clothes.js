@@ -43,12 +43,12 @@ const Catalog = ({ clothesArr }) => {
                 <div className={styles.shoes__inner}>
                     <h1 className={styles.shoes__title}>Одежда</h1>
 
-                    <div className={styles.shoes__filter}>
+                    {/* <div className={styles.shoes__filter}>
                         <button className={styles.shoes__filter_brand} value="all" onClick={(e)=>setFiltered(e.target.value)}>Все</button>
                         <button className={styles.shoes__filter_brand} value="hoodie" onClick={(e)=>setFiltered(e.target.value)}>Худи</button>
                         <button className={styles.shoes__filter_brand} value="T-shirt" onClick={(e)=>setFiltered(e.target.value)}>Футболки</button>
                         <button className={styles.shoes__filter_brand} value="jeans" onClick={(e)=>setFiltered(e.target.value)}>Джинсы</button>
-                    </div>
+                    </div> */}
                     <div className={styles.shoes__wrapper}>
                         {
                             filtered?.map((elem, index) => (

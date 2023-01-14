@@ -16,6 +16,7 @@ import Image from 'next/image';
 
 
 import mainLogo from '../src/icons/MainLogo3.png';
+import NavbarBurger from './NavbarBurger';
 
 //динамический роут нужен для отключения ssr, чтобы корзина отрисовывалась только на стороне клиента
 //без него появляется ошибка гидратации
@@ -25,6 +26,7 @@ import mainLogo from '../src/icons/MainLogo3.png';
 
 const Header = () => {
     const [showCart, toggleShowCart] = useState(false);
+    const [activeMenu, toggleMenu] = useState(false);
     const cartItems = useSelector((state) => state.cart.cartItems);
     const cartAmount = useSelector((state) => state.cart.cartItems.length);
 
@@ -58,6 +60,14 @@ const Header = () => {
                         <div className='header_cart-btn-count'>{cartAmount}</div>
                     </button>
 
+                    <div className='header__burger-menu' onClick={() => toggleMenu(true)}>
+                        <span />
+                    </div>
+
+                    {/* {
+                        activeMenu ? <NavbarBurger /> : ""
+                    } */}
+
                     <CSSTransition
                         in={showCart}
                         timeout={500}
@@ -71,6 +81,10 @@ const Header = () => {
 
                     </CSSTransition>
                     
+                    {
+                        activeMenu ? <NavbarBurger close={toggleMenu}/> : ""
+                    }
+
                 </div>
             </div>
         </div>

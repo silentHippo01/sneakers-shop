@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 // import style from '../styles/Navbar.module.scss'
 
 const Navbar = () => {

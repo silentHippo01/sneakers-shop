@@ -3,7 +3,7 @@ import { client } from '../lib/client';
 import styles from '../styles/page_style/Shoes.module.scss';
 import Product from '../components/Product';
 
-import { paginate } from '../utils/paginate';
+import { paginate } from '../utils/paginate'; 
 import Pagination from '../components/Pagination';
 
 export const getServerSideProps = async () => {
@@ -26,13 +26,13 @@ export const getServerSideProps = async () => {
 const Catalog = ({ shoesArr }) => {
     const [filter, setFiltered] = useState('all');
     const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 3;
+    const pageSize = 6;
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
-    }
+    } 
 
-    const paginatePost = paginate(shoesArr, currentPage, pageSize);
+    // const paginatePost = paginate(filteredShoes, currentPage, pageSize);
 
     const filters = (arr, filter) => {
         if(filter === 'all'){
@@ -43,26 +43,31 @@ const Catalog = ({ shoesArr }) => {
     }
 
     const filteredShoes = filters(shoesArr, filter);
+    const paginatePost = paginate(filteredShoes, currentPage, pageSize);
 
     // функция filters нужна, тк реализовать тоже самое с методом filter не получиться. 
     // Схема ломается, когда нужно вывести все товары без фильтра
     // const filteredShoes = shoesArr.filter(elem => elem.brand === filter);
+    console.log(filteredShoes);
 
     return (
-        <div className={styles.shoes}>
+        <div className={styles.shoes}> 
             <div className='container'>
                 <div className={styles.shoes__inner}>
-                    <h1 className={styles.shoes__title}>Кроссовки</h1>
+                    <h1 className='titleH1'>Кроссовки</h1>
 
-                    {/* <div className={styles.shoes__filter}>
-                        <button className={styles.shoes__filter_brand} value="all" onClick={(e)=>setFiltered(e.target.value)}>Все</button>
-                        <button className={styles.shoes__filter_brand} value="Nike" onClick={(e)=>setFiltered(e.target.value)}>Nike</button>
-                        <button className={styles.shoes__filter_brand} value="Adidas" onClick={(e)=>setFiltered(e.target.value)}>Adidas</button>
-                        <button className={styles.shoes__filter_brand} value="Vans" onClick={(e)=>setFiltered(e.target.value)}>Vans</button>
-                        <button className={styles.shoes__filter_brand} value="Puma" onClick={(e)=>setFiltered(e.target.value)}>Puma</button>
-                        <button className={styles.shoes__filter_brand} value="Reebok" onClick={(e)=>setFiltered(e.target.value)}>Reebok</button>
-                    </div> */}
-                    <div className={styles.shoes__wrapper}>
+                    <div className='filters'>
+                        <button className='filters_item' value="all" onClick={(e)=>setFiltered(e.target.value)}>Все</button>
+                        <button className='filters_item' value="Nike" onClick={(e)=>setFiltered(e.target.value)}>Nike</button>
+                        <button className='filters_item' value="Adidas" onClick={(e)=>setFiltered(e.target.value)}>Adidas</button>
+                        <button className='filters_item' value="Vans" onClick={(e)=>setFiltered(e.target.value)}>Vans</button>
+                        <button className='filters_item' value="Puma" onClick={(e)=>setFiltered(e.target.value)}>Puma</button>
+                        <button className='filters_item' value="Reebok" onClick={(e)=>setFiltered(e.target.value)}>Reebok</button>
+                    </div>
+
+                    {/* className={styles.shoes__wrapper} */}
+
+                    <div className="page__wrapper">
                         {
                             paginatePost?.map((elem, index) => (
                                 <Product product={elem} key={index}/>
@@ -71,7 +76,7 @@ const Catalog = ({ shoesArr }) => {
                     </div>
 
                     <Pagination 
-                        items={shoesArr.length}
+                        items={filteredShoes.length}
                         pageSize={pageSize}
                         currentPage={currentPage}   
                         onPageChange={handlePageChange} 

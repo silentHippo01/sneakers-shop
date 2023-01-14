@@ -39,3 +39,19 @@
 
     color: #ffffff;
 }
+
+
+@media (max-width: 768px){
+    .page__item {
+        width: 55px;
+        height: 55px;
+        font-size: 23px;
+    }
+
+    .page__item_active {
+        width: 55px;
+        height: 55px;
+        font-size: 23px;
+    }
+    
+}

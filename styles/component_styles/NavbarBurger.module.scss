@@ -1,0 +1,62 @@
+.navbarBurger{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 100;
+
+    &__inner{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__closeBtn{
+        position: relative;
+        cursor: pointer;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 5px;
+            background-color: black;
+            top: 0;
+            right: 0;
+            margin: 50px 40px;
+            transform: rotate(134deg);
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 5px;
+            background-color: black;
+            top: 0;
+            right: 0;
+            margin: 50px 40px;
+            transform: rotate(48deg);
+        }
+    }
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        
+        height: 500px;
+        &_item{
+            font-size: 50px;
+        }
+
+        &_link{
+            font-size: 50px;
+        }
+    }
+
+
+}

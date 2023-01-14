@@ -6,11 +6,11 @@
     margin-bottom: 50px;
     cursor: pointer;
     border: 1px solid transparent;
+    border-radius: 10px;
     &:hover{
         border: 1px solid rgb(17, 17, 17);
-        border-radius: 10px;
-        transition: all .9s;
-    }
+        transition: all .5s;
+    } 
 
     &__label_discount{
         font-size: 11px;

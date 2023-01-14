@@ -6,6 +6,8 @@
     margin-bottom: 50px;
     cursor: pointer;
     border: 1px solid transparent;
+    border-radius: 10px;
+    transition: all .5s;
     &:hover{
         border: 1px solid rgb(17, 17, 17);
         border-radius: 10px;
@@ -24,7 +26,8 @@
     }
 
     &__image{
-        width: 350px;
+        max-width: 100%;
+        // max-width: 350px;
         // height: 300px;
         border-radius: 15px;
     }
@@ -51,6 +54,96 @@
             font-weight: bold;
             &::after{
                 content:" \20BD"
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .product{
+        max-width: 300px;
+    
+        &__details{
+            margin-top: 0px;
+            &_brand{
+                font-size: 13px;
+            }
+    
+            &_title{
+                font-size: 20px;
+            }
+    
+            &_oldPrice{
+                
+            }
+    
+            &_price{
+                
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    .product{
+        max-width: 350px;
+
+        &__details{
+            margin-top: 0px;
+            &_brand{
+                font-size: 13px;
+            }
+
+            &_title{
+                font-size: 20px;
+            }
+    
+            &_oldPrice{
+                
+            }
+    
+            &_price{
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .product{
+        max-width: 490px;
+
+        &__label_discount{
+            font-size: 20px;
+            top: 10px;
+            left: 15px;
+            border-radius: 4px;
+            padding: 10px 17px;
+        }
+        
+        &__image{
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        &__details{
+            margin-top: 0px;
+            &_brand{
+                font-size: 20px;
+            }
+
+            &_title{
+                font-size: 30px;
+                line-height: 32px;
+            }
+    
+            &_oldPrice{
+                font-size: 25px;
+            }
+    
+            &_price{
+                font-size: 25px;
             }
         }
     }

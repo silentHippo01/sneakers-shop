@@ -17,12 +17,12 @@ export const getServerSideProps = async () => {
         props: {
             shippingArticles
         }
-    }
+    } 
 }
 
 const components = {
     block: {
-        h3: ({ children }) => <h1 className='title'>{children}</h1>,
+        h3: ({ children }) => <h3 className='title'>{children}</h3>,
     }
 }
 

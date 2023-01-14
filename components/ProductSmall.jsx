@@ -9,7 +9,7 @@ const Product = ({ product: { name, slug, price, discount, brand, image  } }) =>
     return (
         <Link href={`/product/${slug.current}`}>
             <div className={styles.product}>
-                {
+                { 
                     discount > 0
                         ?
                         <span className={styles.product__label_discount}>

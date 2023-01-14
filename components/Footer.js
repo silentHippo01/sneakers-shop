@@ -47,7 +47,7 @@ const Footer = () => {
                             <div className='footer__address-item'>Нижний Кисельный пер., 4 (м. Трубная)</div>
                             <div className='footer__address-item'>ул. Никольская, 10/2 с.2Б (м. Лубянка)</div>
                         </div>
-                        <ul className='footer__socials'>
+                        {/* <ul className='footer__socials'>
                             <li className='footer__socials-item'>
                                 <a href="#"></a>
                             </li>
@@ -62,7 +62,7 @@ const Footer = () => {
                             <li className='footer__socials-item'>
                                 <a className='footer__socials-link footer__socials-linkedin' href="#">linkedin</a>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <p className='footer__copyright'>
                         © 2022 Sneakers Shop, Inc. All Rights Reserved

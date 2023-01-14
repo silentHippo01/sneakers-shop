@@ -21,12 +21,12 @@ export const getServerSideProps = async () => {
     }
 }
 
-// const components = {
-//     block: {
-//         h3: ({ children }) => <h1 className={styles.faq__content_title}>{children}</h1>,
-//     }
-// }
-
+const components = {
+    block: {
+        h3: ({ children }) => <h1 className={styles.faq__content_title}>{children}</h1>,
+    }
+}
+ 
 const faq = ({ faqArr }) => {
     console.log(faqArr);
     return (
@@ -36,7 +36,7 @@ const faq = ({ faqArr }) => {
                 <div className={styles.faq__inner}>
                     <div className={styles.faq__content}>
                         <div className={styles.faq__content_item}>
-                            <PortableText value={faqArr[0].content} />
+                            <PortableText value={faqArr[0].content} components={components}/>
                         </div>
                     </div>
                 </div>

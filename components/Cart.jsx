@@ -26,7 +26,7 @@ const Cart = ({ toggleShowCart, showCart, ref }) => {
                         
                         {
                             cartItems.length > 0 ? 
-                            <div> 
+                            <div className='cart__bottom'> 
                                 <p className='cart__total'>Итого: {totalPrice} </p> 
                                 <button className='cart__btn_buy'>  <Link href="/order">  Оформить заказ </Link></button> 
                             </div> 

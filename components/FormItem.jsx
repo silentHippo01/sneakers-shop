@@ -1,7 +1,8 @@
-import { ForwardRef } from 'react';
+import React from 'react';
+import { forwardRef } from 'react';
 import styles from '../styles/page_style/Order.module.scss'
 
-const FormItem = ForwardRef((props, ref) => {
+const FormItem = React.forwardRef((props, ref) => {
     return (
         <div className={styles.order__details_form_item}>
             <p className={styles.order__details_form_item_title}>{props.title}</p>

@@ -17,7 +17,7 @@ export const getServerSideProps = async () => {
     }
 }
 
-const accessories = ({ accessories }) => {
+const Accessories = ({ accessories }) => {
 
     
     const [currentPage, setCurrentPage] = useState(1);
@@ -54,4 +54,4 @@ const accessories = ({ accessories }) => {
     );
 };
 
-export default accessories;
+export default Accessories;

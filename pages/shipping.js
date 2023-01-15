@@ -26,7 +26,7 @@ const components = {
     }
 }
 
-const shipping = ({ shippingArticles }) => {
+const Shipping = ({ shippingArticles }) => {
     console.log(shippingArticles);
 
     const [activeArticle, setActiveArticle] = useState(2);
@@ -63,4 +63,4 @@ const shipping = ({ shippingArticles }) => {
     );
 };
 
-export default shipping;
+export default Shipping;

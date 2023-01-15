@@ -9,6 +9,7 @@ import Slider from "react-slick";
 export default function Home({ recommendations, banners }) {
   const items = banners.map((elem, index) => (
     <img src={urlFor(elem.image[0])} key={index} />
+    // <Image src={urlFor(elem.image[0])} key={index} widht={1000} height={500}/>
   ))
 
   const settings = {

@@ -10,17 +10,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormItem from "../components/FormItem";
 
 
-// const schema = yup.object().shape({
-//     fullName: yup
-//         .string()
-//         .matches(/^([^0-9]*)$/, "ФИО не может содержать цифры")
-//         .required("Обязательное поле"),
-//     email: yup
-//         .string()
-//         .email("Введите корректный адрес эл. почты")
-//         .required("Обязательное поле"),
-// })
-
 const schema = yup.object().shape({
     fullName: yup.string().matches(/^([^0-9]*)$/, "ФИО не может содержать цифры").required("Обязательное поле"),
     email: yup.string().email().required(),
@@ -33,7 +22,7 @@ const schema = yup.object().shape({
 });
 
 
-const order = () => {
+const Order = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(schema),
     });
@@ -91,6 +80,7 @@ const order = () => {
                                     <input 
                                         className={styles.order__details_form_item_input}
                                         {...register("country")}
+
                                         type="text"
                                         required
                                     />
@@ -170,4 +160,4 @@ const order = () => {
     );
 };
 
-export default order;
+export default Order;
